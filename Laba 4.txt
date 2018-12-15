@@ -11,7 +11,7 @@ FROM   MaxTotalDue
 ---------------------------------------------------------------------------------------------
 2.
 DECLARE @the_most_expensive as Float;
-SET @the_most_expensive = (select top 1 [SalesOrderHeader].[TotalDue]
+SET @the_most_expensive = (select top 1 SalesOrderHeader.TotalDue
                 from SalesLT.SalesOrderHeader
                 order by SalesLT.SalesOrderHeader.TotalDue desc
                 )
