@@ -3,7 +3,7 @@
 SELECT TOP 1 SalesLT.SalesOrderHeader.TotalDue, SalesLT.SalesOrderHeader.SalesOrderID
 FROM   SalesLT.SalesOrderHeader
 ORDER By 1 DESC
------------------------------------------------------
+-----------------
 SELECT SalesLT.SalesOrderHeader.SalesOrderID, SalesLT.SalesOrderHeader.TotalDue
 FROM SalesLT.SalesOrderHeader
 WHERE SalesLT.SalesOrderHeader.TotalDue  = (SELECT MAX(SalesLT.SalesOrderHeader.TotalDue) FROM SalesLT.SalesOrderHeader)
