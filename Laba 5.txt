@@ -81,7 +81,7 @@ CREATE FUNCTION dbo.NumberWord(@num_word int)
 
 	SELECT
 	@str=CASE @num_word
-		WHEN 1 THEN N'Один '
+	WHEN 1 THEN N'Один '
 	WHEN 2 THEN N'Два '
 	WHEN 3 THEN N'Три '
 	WHEN 4 THEN N'Чотири '
