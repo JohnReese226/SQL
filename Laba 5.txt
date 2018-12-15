@@ -7,10 +7,10 @@ CREATE FUNCTION dbo.DayWord(@day int)
         DECLARE @lastNumberOfDay INT
         SET @lastNumberOfDay = @day % 10
         SET @str=
-            CASE WHEN @day >= 10 AND @day <= 20 THEN CAST(@day as varchar(10)) + N' Äí³â'
-                 WHEN @lastNumberOfDay = 1 THEN CAST(@day as varchar(10)) + N' Äåíü'
-                 WHEN (@lastNumberOfDay BETWEEN 1 AND 4) THEN CAST(@day as varchar(10)) + N' Äí³'
-                 WHEN (@lastNumberOfDay > 4 OR @lastNumberOfDay = 0 OR @day = 0) THEN CAST(@day as varchar(10)) + N' Äí³â'
+            CASE WHEN @day >= 10 AND @day <= 20 THEN CAST(@day as varchar(10)) + N' Днів'
+                 WHEN @lastNumberOfDay = 1 THEN CAST(@day as varchar(10)) + N' День'
+                 WHEN (@lastNumberOfDay BETWEEN 1 AND 4) THEN CAST(@day as varchar(10)) + N' Дні'
+                 WHEN (@lastNumberOfDay > 4 OR @lastNumberOfDay = 0 OR @day = 0) THEN CAST(@day as varchar(10)) + N' Днів'
         ELSE ''
   END
   RETURN @str
@@ -24,9 +24,9 @@ CREATE FUNCTION dbo.MonthWord(@month int)
         DECLARE @lastNumberOfDay INT
         SET @lastNumberOfDay = @month % 10
         SET @str=
-            CASE WHEN @lastNumberOfDay = 1 THEN CAST(@month as varchar(10)) + N' Ì³ñÿöü'
-                 WHEN (@lastNumberOfDay BETWEEN 1 AND 4) THEN CAST(@month as varchar(10)) + N' Ì³ñÿö³'
-                 WHEN (@lastNumberOfDay > 4 OR @lastNumberOfDay = 0 OR (@month >= 10 AND @month <= 12)) THEN CAST(@month as varchar(10)) + N' Ì³ñÿö³â'
+            CASE WHEN @lastNumberOfDay = 1 THEN CAST(@month as varchar(10)) + N' Місяць'
+                 WHEN (@lastNumberOfDay BETWEEN 1 AND 4) THEN CAST(@month as varchar(10)) + N' Місяці'
+                 WHEN (@lastNumberOfDay > 4 OR @lastNumberOfDay = 0 OR (@month >= 10 AND @month <= 12)) THEN CAST(@month as varchar(10)) + N' Місяців'
         ELSE ''
   END
   RETURN @str
@@ -40,9 +40,9 @@ CREATE FUNCTION dbo.YearWord(@year int)
         DECLARE @lastNumberOfDay INT
         SET @lastNumberOfDay = @year % 10
         SET @str=
-            CASE WHEN @lastNumberOfDay = 1 THEN CAST(@year as varchar(10)) + N' Ð³ê'
-                 WHEN (@lastNumberOfDay BETWEEN 1 AND 4) THEN CAST(@year as varchar(10)) + N' Ðîêè'
-                 WHEN (@lastNumberOfDay > 4 OR @lastNumberOfDay = 0 OR (@year >= 10 AND @year <= 20)) THEN CAST(@year as varchar(10)) + N' Ðîê³â'
+            CASE WHEN @lastNumberOfDay = 1 THEN CAST(@year as varchar(10)) + N' Рік'
+                 WHEN (@lastNumberOfDay BETWEEN 1 AND 4) THEN CAST(@year as varchar(10)) + N' Роки'
+                 WHEN (@lastNumberOfDay > 4 OR @lastNumberOfDay = 0 OR (@year >= 10 AND @year <= 20)) THEN CAST(@year as varchar(10)) + N' Років'
         ELSE ''
   END
   RETURN @str
