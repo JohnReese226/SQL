@@ -33,4 +33,4 @@ GROUP BY SalesLt.Address.City, SalesLT.SalesOrderHeader.TotalDue, SalesLT.SalesO
 4.
 SELECT Top(1) SalesLT.SalesOrderHeader.ShipMethod, SalesLT.SalesOrderHeader.PurchaseOrderNumber, SalesLT.SalesOrderHeader.OrderDate, SalesLT.SalesOrderHeader.TotalDue
 FROM SalesLT.SalesOrderHeader 
-ORDER by TotalDue DESC
+ORDER by SalesLT.SalesOrderHeader.TotalDue DESC
