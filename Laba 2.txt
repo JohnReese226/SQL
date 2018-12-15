@@ -31,6 +31,6 @@ FROM SalesLT.SalesOrderHeader inner join SalesLt.Address ON SalesLT.SalesOrderHe
 GROUP BY SalesLt.Address.City, SalesLT.SalesOrderHeader.TotalDue, SalesLT.SalesOrderHeader.DueDate
 
 4.
-SELECT Top(5) SalesLT.SalesOrderHeader.ShipMethod, SalesLT.SalesOrderHeader.PurchaseOrderNumber, SalesLT.SalesOrderHeader.OrderDate, SalesLT.SalesOrderHeader.TotalDue
+SELECT Top(1) SalesLT.SalesOrderHeader.ShipMethod, SalesLT.SalesOrderHeader.PurchaseOrderNumber, SalesLT.SalesOrderHeader.OrderDate, SalesLT.SalesOrderHeader.TotalDue
 FROM SalesLT.SalesOrderHeader 
 ORDER by TotalDue DESC
